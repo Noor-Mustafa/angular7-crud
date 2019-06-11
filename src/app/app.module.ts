@@ -14,18 +14,21 @@ import { FooterComponent } from './header-footer/footer/footer.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
-
+import { HttpClientModule, /* other http imports */ } from "@angular/common/http";
+import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
-    UsersPageComponent
+    UsersPageComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

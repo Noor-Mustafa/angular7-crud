@@ -1,33 +1,39 @@
 <section class="container mt-5 mb-5">
-  <div class="row">
-    <div class="col-md-3">
+  <div class="row" *ngIf="users">
+    <div class="col-md-3" *ngFor="let user of users">
       <!-- Card -->
-      <mdb-card>
-        <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-          <!-- Card img -->
-          <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
-            alt="Card image cap">
-          </mdb-card-img>
-          <a>
-            <div class="mask"></div>
-          </a>
-        </div>
-        <!--Card content-->
-        <mdb-card-body>
-          <!--Title-->
-          <mdb-card-title>
-            <h4>Card Title</h4>
-          </mdb-card-title>
+      <a routerLink="/users/user-detail" [queryParams]="{user: user.login}">
+        <mdb-card>
+          <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+            <!-- Card img -->
+            <mdb-card-img [src]="user.avatar_url" alt="Card image cap">
+            </mdb-card-img>
+            <a>
+              <div class="mask"></div>
+            </a>
+          </div>
+          <!--Card content-->
+          <mdb-card-body>
+            <!--Title-->
+            <mdb-card-title class="text-center">
+              <h4>{{user.login}}</h4>
+            </mdb-card-title>
 
-          <!--Text-->
-          <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+            <!--Text-->
+            <!-- <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
             content.
-          </mdb-card-text>
+          </mdb-card-text> -->
 
-          <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
-        </mdb-card-body>
-      </mdb-card>
+            <!-- <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a> -->
+          </mdb-card-body>
+        </mdb-card>
+      </a>
       <!-- Card -->
+    </div>
+  </div>
+  <div class="text-center" *ngIf="!users">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
   </div>
 </section>
