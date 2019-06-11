@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
  * Pages
  */
 import { HomePageComponent } from '../pages/home-page/home-page.component';
+import { UsersPageComponent } from '../pages/users-page/users-page.component';
 
 /**
  * @imports according to Application Requirements
@@ -17,6 +18,11 @@ const appRoutes: Routes = [
   {
     path: '',
     component: HomePageComponent,
+    data: { title: 'CRUD' }
+  },
+  {
+    path: 'users',
+    component: UsersPageComponent,
     data: { title: 'CRUD' }
   }
 ];

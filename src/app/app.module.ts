@@ -13,13 +13,15 @@ import { FooterComponent } from './header-footer/footer/footer.component';
 
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { UsersPageComponent } from './pages/users-page/users-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UsersPageComponent
   ],
   imports: [
     BrowserModule,
