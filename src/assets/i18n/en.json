@@ -16,6 +16,9 @@
         "add_user_btn": {
             "trans": "ADD USER"
         },
+        "total_users": {
+            "trans": "Total Users"
+        },
         "order_by": {
             "trans": "Order By",
             "tooltip_info": {
