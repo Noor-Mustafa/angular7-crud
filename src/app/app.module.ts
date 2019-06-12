@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UsersListWithFiltrationComponent } from './components/users-list-with-filtration/users-list-with-filtration.component';
+import { UserDetailPageComponent } from './pages/user-detail-page/user-detail-page.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -38,7 +39,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     UsersPageComponent,
     UserDetailComponent,
-    UsersListWithFiltrationComponent
+    UsersListWithFiltrationComponent,
+    UserDetailPageComponent
   ],
   imports: [
     BrowserModule,
