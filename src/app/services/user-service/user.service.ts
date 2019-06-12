@@ -8,13 +8,16 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-
+  private page_number: number;
   constructor(
     private http_client_instance: HttpClient
-  ) { }
+  ) {
+    this.page_number = -10;
+  }
 
   public getUsers(): any {
-    return this.http_client_instance.get(`https://api.github.com/users?since=135`);
+    this.page_number += 10;
+    return this.http_client_instance.get(`https://api.github.com/users?since=` + this.page_number + `&per_page=10`);
     // let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     // let options = new RequestOptions({ headers: headers });
     // var params = { token: localStorage.getItem('jwt'), blog_id: id };

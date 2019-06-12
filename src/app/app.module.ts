@@ -16,6 +16,11 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
 import { HttpClientModule, /* other http imports */ } from "@angular/common/http";
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
+
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +34,8 @@ import { UserDetailComponent } from './pages/user-detail/user-detail.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    InfiniteScrollModule,
+    FormsModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
