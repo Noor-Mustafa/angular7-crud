@@ -36,5 +36,40 @@
         "search": {
             "trans": "Search"
         }
+    },
+    "user_detail": {
+        "information": {
+            "trans": "INFORMATION"
+        },
+        "member_since": {
+            "trans": "Member Since"
+        },
+        "location": {
+            "trans": "Location"
+        },
+        "company": {
+            "trans": "Company"
+        },
+        "repositories": {
+            "trans": "Repositories"
+        },
+        "gists": {
+            "trans": "Gists"
+        },
+        "followers": {
+            "trans": "Followers"
+        },
+        "following": {
+            "trans": "Following"
+        },
+        "links": {
+            "trans": "LINKS"
+        },
+        "github": {
+            "trans": "GitHub"
+        },
+        "blog": {
+            "trans": "Blog"
+        }
     }
 }

@@ -36,5 +36,40 @@
         "search": {
             "trans": "بحث"
         }
+    },
+    "user_detail": {
+        "information": {
+            "trans": "المعلومات"
+        },
+        "member_since": {
+            "trans": "عضو منذ"
+        },
+        "location": {
+            "trans": "موقعك"
+        },
+        "company": {
+            "trans": "شركة"
+        },
+        "repositories": {
+            "trans": "المستودعات"
+        },
+        "gists": {
+            "trans": "والمحتوى"
+        },
+        "followers": {
+            "trans": "متابعون"
+        },
+        "following": {
+            "trans": "Following"
+        },
+        "links": {
+            "trans": "LINKS"
+        },
+        "github": {
+            "trans": "GitHub"
+        },
+        "blog": {
+            "trans": "Blog"
+        }
     }
 }

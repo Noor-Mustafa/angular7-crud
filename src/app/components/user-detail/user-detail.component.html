@@ -18,37 +18,42 @@
       <div>
         <div class="text-center">
           <h2>
-            INFORMATION
+            {{'user_detail.information.trans' | translate }}
           </h2>
         </div>
 
-        <div class="p-2 info-block">Member Since: {{user_detail.created_at | date: "MMM d, y"}}</div>
-        <div class="p-2 info-block">Location: {{user_detail.location}}</div>
-        <div class="p-2 info-block">company: {{user_detail.company}}</div>
+        <div class="p-2 info-block"> {{'user_detail.member_since.trans' | translate }}:
+          {{user_detail.created_at | date: "MMM d, y"}}</div>
+        <div class="p-2 info-block">{{'user_detail.location.trans' | translate }}: {{user_detail.location}}</div>
+        <div class="p-2 info-block">{{'user_detail.company.trans' | translate }}: {{user_detail.company}}</div>
 
-        <div class="p-2 info-block">Repositories: {{user_detail.public_repos}}</div>
-        <div class="p-2 info-block">Gists: {{user_detail.public_gists}}</div>
-        <div class="p-2 info-block">Followers: {{user_detail.followers}}</div>
-        <div class="p-2 info-block">Following: {{user_detail.following}}</div>
+        <div class="p-2 info-block">{{'user_detail.repositories.trans' | translate }}: {{user_detail.public_repos}}
+        </div>
+        <div class="p-2 info-block">{{'user_detail.gists.trans' | translate }}: {{user_detail.public_gists}}
+        </div>
+        <div class="p-2 info-block">{{'user_detail.followers.trans' | translate }}: {{user_detail.followers}}</div>
+        <div class="p-2 info-block">{{'user_detail.following.trans' | translate }}: {{user_detail.following}}</div>
       </div>
+
     </div>
+
     <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
       <div>
 
         <div class="text-center">
           <h2>
-            LINKS
+            {{'user_detail.links.trans' | translate }}
           </h2>
         </div>
 
         <div class="p-2 info-block">
           <a target="_blank" [href]="user_detail.html_url">
-            <i class="fa fa-link" aria-hidden="true"></i> GitHub
+            <i class="fa fa-link" aria-hidden="true"></i> {{'user_detail.github.trans' | translate }}
           </a>
         </div>
         <div class="p-2 info-block">
           <a target="_blank" [href]="user_detail.blog">
-            <i class="fa fa-link" aria-hidden="true"></i> Blog
+            <i class="fa fa-link" aria-hidden="true"></i> {{'user_detail.blog.trans' | translate }}
           </a>
         </div>
 
