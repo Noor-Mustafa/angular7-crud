@@ -15,7 +15,6 @@ import { FooterComponent } from './header-footer/footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
-import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
@@ -26,6 +25,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UsersListWithFiltrationComponent } from './components/users-list-with-filtration/users-list-with-filtration.component';
 import { UserDetailPageComponent } from './pages/user-detail-page/user-detail-page.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -38,9 +38,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     FooterComponent,
     UsersPageComponent,
-    UserDetailComponent,
     UsersListWithFiltrationComponent,
-    UserDetailPageComponent
+    UserDetailPageComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

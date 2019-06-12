@@ -30,8 +30,7 @@ export class UserDetailComponent implements OnInit {
 
     this.user_service_instance.getUserDetail(this.user).subscribe((data) => {
       // this.users = data;
-      this.user_detail =  data; 
-      // console.log("data: ", data)
+      this.user_detail = data;
     });
   }
 
