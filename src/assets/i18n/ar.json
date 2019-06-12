@@ -11,5 +11,30 @@
         "copy_right": {
             "trans": "حقوق الطبع والنشر"
         }
+    },
+    "users_list_with_filtration_comp": {
+        "add_user_btn": {
+            "trans": "إضافة مستخدم"
+        },
+        "order_by": {
+            "trans": "ترتيب حسب",
+            "tooltip_info": {
+                "trans": "يعتمد ترشيح الطلب على 'اسم المستخدم'"
+            }
+        },
+        "order_radio_buttons": {
+            "default": {
+                "trans": "افتراضي"
+            },
+            "ascending": {
+                "trans": "تصاعدي"
+            },
+            "descending": {
+                "trans": "تنازلي"
+            }
+        },
+        "search": {
+            "trans": "بحث"
+        }
     }
 }

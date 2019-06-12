@@ -11,5 +11,30 @@
         "copy_right": {
             "trans": "Copyright"
         }
+    },
+    "users_list_with_filtration_comp": {
+        "add_user_btn": {
+            "trans": "ADD USER"
+        },
+        "order_by": {
+            "trans": "Order By",
+            "tooltip_info": {
+                "trans": "Order filtration is based on 'User Name'"
+            }
+        },
+        "order_radio_buttons": {
+            "default": {
+                "trans": "Default"
+            },
+            "ascending": {
+                "trans": "Ascending"
+            },
+            "descending": {
+                "trans": "Descending"
+            }
+        },
+        "search": {
+            "trans": "Search"
+        }
     }
 }
