@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
  */
 import { HomePageComponent } from '../pages/home-page/home-page.component';
 import { UsersPageComponent } from '../pages/users-page/users-page.component';
-import { UserDetailComponent } from '../pages/user-detail/user-detail.component';
+import { UserDetailPageComponent } from '../pages/user-detail-page/user-detail-page.component';
 
 /**
  * @imports according to Application Requirements
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'users/user-detail',
-    component: UserDetailComponent,
+    component: UserDetailPageComponent,
     data: { title: 'CRUD' }
   }
 ];

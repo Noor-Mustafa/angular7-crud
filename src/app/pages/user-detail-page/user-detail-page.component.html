@@ -1,3 +1,76 @@
-<p>
-  user-detail-page works!
-</p>
+<section class="container mb-5">
+
+    <div *ngIf="user_detail" class="row">
+  
+      <div class="col-lg-4 col-md-4 col-sm-12 mt-5 text-center">
+        <img [src]="user_detail.avatar_url" class="w-75 img-responsive rounded" />
+        <div class="username mt-2 text-dark shadow-lg p-1 mb-4 bg-white mr-5 ml-5">
+          <h2>
+            <strong>
+              {{user_detail.name}}
+            </strong>
+          </h2>
+        </div>
+      </div>
+  
+      <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+  
+        <div>
+          <div class="text-center">
+            <h2>
+              INFORMATION
+            </h2>
+          </div>
+  
+          <div class="p-2 info-block">Member Since: {{user_detail.created_at | date: "MMM d, y"}}</div>
+          <div class="p-2 info-block">Location: {{user_detail.location}}</div>
+          <div class="p-2 info-block">company: {{user_detail.company}}</div>
+  
+          <div class="p-2 info-block">Repositories: {{user_detail.public_repos}}</div>
+          <div class="p-2 info-block">Gists: {{user_detail.public_gists}}</div>
+          <div class="p-2 info-block">Followers: {{user_detail.followers}}</div>
+          <div class="p-2 info-block">Following: {{user_detail.following}}</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+        <div>
+  
+          <div class="text-center">
+            <h2>
+              LINKS
+            </h2>
+          </div>
+  
+          <div class="p-2 info-block">
+            <a target="_blank" [href]="user_detail.html_url">
+              <i class="fa fa-link" aria-hidden="true"></i> GitHub
+            </a>
+          </div>
+          <div class="p-2 info-block">
+            <a target="_blank" [href]="user_detail.blog">
+              <i class="fa fa-link" aria-hidden="true"></i> Blog
+            </a>
+          </div>
+  
+          <!-- <div class="p-2 info-block">
+            <a target="_blank" [href]="user_detail.followers_url">
+              <i class="fa fa-link" aria-hidden="true"></i> Followers
+            </a>
+          </div>
+          <div class="p-2 info-block">
+            <a target="_blank" [href]="user_detail.following_url">
+              <i class="fa fa-link" aria-hidden="true"></i> Following
+            </a>
+          </div> -->
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="text-center mt-5" *ngIf="!user_detail">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  
+  </section>
