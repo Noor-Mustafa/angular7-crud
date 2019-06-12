@@ -1,0 +1,15 @@
+{
+    "header_comp": {
+        "home": {
+            "trans": "الصفحة الرئيسية"
+        },
+        "users": {
+            "trans": "المستخدمين"
+        }
+    },
+    "footer_comp": {
+        "copy_right": {
+            "trans": "حقوق الطبع والنشر"
+        }
+    }
+}

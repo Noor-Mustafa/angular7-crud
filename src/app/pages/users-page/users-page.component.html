@@ -51,7 +51,7 @@
 
   <div class="row" *ngIf="users.length && !ordered_users.length && !search_key && user_order=='default'" infiniteScroll
     [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
-    <div class="col-md-3" *ngFor="let user of users">
+    <div class="col-md-3 mb-5" *ngFor="let user of users">
       <!-- Card -->
       <a routerLink="/users/user-detail" [queryParams]="{user: user.login}">
         <mdb-card>
@@ -84,7 +84,7 @@
   </div>
 
   <div class="row" *ngIf="ordered_users.length">
-    <div class="col-md-3" *ngFor="let user of ordered_users">
+    <div class="col-md-3 mb-5" *ngFor="let user of ordered_users">
       <!-- Card -->
       <a routerLink="/users/user-detail" [queryParams]="{user: user.login}">
         <mdb-card>
@@ -124,7 +124,7 @@
     </div>
   </div>
 
-  <div class="text-center mt-5" *ngIf="!users || loader">
+  <div class="text-center mt-5" *ngIf="!users.length || loader">
     <div class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
     </div>

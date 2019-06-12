@@ -14,12 +14,21 @@ import { FooterComponent } from './header-footer/footer/footer.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
-import { HttpClientModule, /* other http imports */ } from "@angular/common/http";
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { FormsModule } from '@angular/forms';
+
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { UsersListWithFiltrationComponent } from './components/users-list-with-filtration/users-list-with-filtration.component';
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -28,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     UsersPageComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UsersListWithFiltrationComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +46,14 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     InfiniteScrollModule,
     FormsModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

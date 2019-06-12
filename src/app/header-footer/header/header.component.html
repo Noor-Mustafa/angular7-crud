@@ -13,15 +13,26 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a routerLink="" routerLinkActive="active-nav" class="nav-link waves-light" mdbWavesEffect>
-          Home
+          {{'header_comp.home.trans' | translate }}
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="users" routerLinkActive="active-nav" class="nav-link waves-light" mdbWavesEffect>
-          Users
+          {{'header_comp.users.trans' | translate }}
         </a>
       </li>
     </ul>
+
+    <ul class="navbar-nav float-right">
+      <li class="nav-item">
+        <select class="browser-default custom-select" (change)="changeLanguage($event)">
+          <!-- <mdb-select [options]="languages" formControlName="lang_select" placeholder="Choose your option">
+          </mdb-select> -->
+          <option *ngFor="let lang of languages" selected [value]="lang.value">{{lang.label}}</option>
+        </select>
+      </li>
+    </ul>
+
 
   </links>
   <!-- Collapsible content -->

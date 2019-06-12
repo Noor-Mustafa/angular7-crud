@@ -1,0 +1,15 @@
+{
+    "header_comp": {
+        "home": {
+            "trans": "Home"
+        },
+        "users": {
+            "trans": "Users"
+        }
+    },
+    "footer_comp": {
+        "copy_right": {
+            "trans": "Copyright"
+        }
+    }
+}
