@@ -103,6 +103,7 @@
           <button (click)="user_detail.avatar_url=''" class="img-btn-ctm w-75" mdbBtn type="button" color="secondary"
             outline="true" mdbWavesEffect>
             {{'user_detail_comp.profile_picture_btn.add_profile_picture.trans' | translate }}
+            <input type="file" accept='image/*' name="image" (change)="userProfilePic($event)" />
           </button>
         </div>
 

@@ -159,12 +159,13 @@
         <div class="modal-body">
 
           <div class="md-form">
-            <input [(ngModel)]="new_user_name" name="search_key" class="form-control form-control-sm mr-3 w-75"
-              type="file" [placeholder]="'User Name'" aria-label="Search" mdbInput>
+            <!-- <input [(ngModel)]="new_user_name" name="search_key" class="form-control form-control-sm mr-3 w-75"
+              type="file" [placeholder]="'User Name'" aria-label="Search" mdbInput> -->
+            <input type="file" accept='image/*' name="image" (change)="userProfilePic($event)" />
           </div>
 
           <div class="md-form">
-            <input (change)="checkUserName()" [(ngModel)]="new_user_name" name="search_key"
+            <input (keyup)="checkUserName()" [(ngModel)]="new_user_name" name="search_key"
               class="form-control form-control-sm mr-3 w-75" type="text" [placeholder]="'User Name'" aria-label="Search"
               mdbInput>
             <mdb-error *ngIf="!new_user_name_status">* user name is required</mdb-error>

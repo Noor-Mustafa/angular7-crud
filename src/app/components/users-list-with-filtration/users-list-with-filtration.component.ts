@@ -23,6 +23,9 @@ export class UsersListWithFiltrationComponent implements OnInit {
   private new_user_name: string;
   private new_user_name_status: boolean;
 
+  private new_user_profile_pic;
+
+
   constructor(
     private user_service_instance: UserService
   ) {
@@ -33,6 +36,7 @@ export class UsersListWithFiltrationComponent implements OnInit {
     this.loader = false;
     this.new_user_name = "";
     this.new_user_name_status = false;
+    this.new_user_profile_pic = "";
   }
 
   ngOnInit() {
@@ -43,17 +47,13 @@ export class UsersListWithFiltrationComponent implements OnInit {
 
   onScroll() {
 
-    console.log("onScroll()");
     this.loader = true;
 
     this.user_service_instance.getUsers().subscribe((data) => {
       for (let i = 0; i < data.length; i++) {
         this.users.push(data[i]);
-        // console.log(data[i]); 
       }
       this.loader = false;
-      // this.users.push(data[0]);
-      // console.log("data: ", this.users)
     });
   }
 
@@ -85,7 +85,6 @@ export class UsersListWithFiltrationComponent implements OnInit {
         else {
           this.onChangeSearch();
         }
-        // this.ordered_users = [...this.users];
         break;
       case 'ascending':
         if (this.search_key) {
@@ -115,20 +114,29 @@ export class UsersListWithFiltrationComponent implements OnInit {
 
   private addUser(): void {
 
+    // const formData = new FormData();
+    // formData.append('file', this.fileData);
+    // this.http.post('url/to/your/api', formData)
+    //   .subscribe(res => {
+    //     console.log(res);
+    //     alert('SUCCESS !!');
+    //   })
+
+    // console.log(this.new_user_profile_pic);
+
     if (true) {
       this.users.splice(0, 0, {
         "login": this.new_user_name,
-        "avatar_url": ""
+        "avatar_url": <File>this.new_user_profile_pic
       });
       this.new_user_name = "";
       this.new_user_name_status = false;
+      this.new_user_profile_pic = "";
     }
     else {
       ;
     }
-
-    console.log("addUser");
-    // window.basicModal.hide();
+    return;
   }
 
   checkUserName(): void {
@@ -138,6 +146,23 @@ export class UsersListWithFiltrationComponent implements OnInit {
     else {
       this.new_user_name_status = true;
     }
+    return;
+  }
+
+  userProfilePic(files): void {
+    // var mimeType = files[0].type;
+    files = files.target.files;
+    var reader = new FileReader();
+    // this.new_user_profile_pic = files;
+    reader.readAsDataURL(files[0]);
+    reader.onload = (_event) => {
+      this.new_user_profile_pic = reader.result;
+    }
+  }
+
+  preview(files) {
+
+
   }
 
 }
