@@ -17,10 +17,16 @@ export class UserDetailComponent implements OnInit {
   private user_detail;
   private user: string;
 
+  private edit: boolean;
+  private should_save: boolean;
+
   constructor(
     private user_service_instance: UserService,
     private activated_route_instance: ActivatedRoute
-  ) { }
+  ) {
+    this.edit = false;
+    this.should_save = true;
+  }
 
   ngOnInit() {
 
@@ -32,6 +38,19 @@ export class UserDetailComponent implements OnInit {
       // this.users = data;
       this.user_detail = data;
     });
+  }
+
+  shouldSave(): void {
+    if (this.user_detail.name.replace(/''/g, "") == "") {
+      this.should_save = false;
+    }
+    else {
+      this.should_save = true;
+    }
+  }
+
+  saveDetails(): void {
+    this.edit = false;
   }
 
 }

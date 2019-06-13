@@ -20,6 +20,8 @@ export class UsersListWithFiltrationComponent implements OnInit {
   private user_order: string;
   private loader: boolean;
 
+  private new_user_name: string;
+
   constructor(
     private user_service_instance: UserService
   ) {
@@ -28,6 +30,7 @@ export class UsersListWithFiltrationComponent implements OnInit {
     this.user_order = "default";
 
     this.loader = false;
+    this.new_user_name = "";
   }
 
   ngOnInit() {
@@ -106,6 +109,22 @@ export class UsersListWithFiltrationComponent implements OnInit {
         break;
     }
     return;
+  }
+
+  private addUser(): void {
+
+    if (true) {
+      this.users.splice(0, 0, {
+        "login": this.new_user_name,
+        "avatar_url": ""
+      });
+    }
+    else {
+      // error
+    }
+
+    console.log("addUser");
+    // window.basicModal.hide();
   }
 
 }

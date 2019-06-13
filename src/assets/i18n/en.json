@@ -38,9 +38,17 @@
         },
         "search": {
             "trans": "Search"
+        },
+        "add_user_modal": {
+            "add": {
+                "trans": "Add"
+            },
+            "close": {
+                "trans": "Close"
+            }
         }
     },
-    "user_detail": {
+    "user_detail_comp": {
         "information": {
             "trans": "INFORMATION"
         },
@@ -73,6 +81,22 @@
         },
         "blog": {
             "trans": "Blog"
+        },
+        "edit_save_btn": {
+            "edit": {
+                "trans": "EDIT"
+            },
+            "save": {
+                "trans": "SAVE"
+            }
+        },
+        "profile_picture_btn": {
+            "remove_profile_picture": {
+                "trans": "Remove Profile Picture"
+            },
+            "add_profile_picture": {
+                "trans": "Add Profile Picture"
+            }
         }
     }
 }

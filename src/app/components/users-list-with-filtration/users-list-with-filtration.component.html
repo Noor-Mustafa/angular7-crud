@@ -151,16 +151,23 @@
           <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
             <span aria-hidden="true">×</span>
           </button>
-          <h4 class="modal-title w-100" id="myModalLabel">ADD USER</h4>
+          <h4 class="modal-title w-100" id="myModalLabel">
+            {{'users_list_with_filtration_comp.add_user_btn.trans' | translate }}
+          </h4>
         </div>
         <div class="modal-body">
           <div>Upload File</div>
-          <div>User Name</div>
+          <div>
+            <input [(ngModel)]="new_user_name" name="search_key" class="form-control form-control-sm mr-3 w-75"
+              type="text" [placeholder]="'User Name'" aria-label="Search" mdbInput>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
-            (click)="basicModal.hide()" mdbWavesEffect>Close</button>
-          <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Add</button>
+            (click)="basicModal.hide()"
+            mdbWavesEffect>{{'users_list_with_filtration_comp.add_user_modal.close.trans' | translate }}</button>
+          <button (click)="addUser()" type="button" mdbBtn color="primary" class="relative waves-light"
+            mdbWavesEffect>{{'users_list_with_filtration_comp.add_user_modal.add.trans' | translate }}</button>
         </div>
       </div>
     </div>

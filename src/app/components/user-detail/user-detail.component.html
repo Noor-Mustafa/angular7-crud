@@ -1,75 +1,258 @@
 <section class="container mb-5">
 
-  <div *ngIf="user_detail" class="row">
+  <div *ngIf="user_detail">
 
-    <div class="col-lg-4 col-md-4 col-sm-12 mt-5 text-center">
-      <img [src]="user_detail.avatar_url" class="w-75 img-responsive rounded" />
-      <div class="username mt-2 text-dark shadow-lg p-1 mb-4 bg-white mr-5 ml-5">
-        <h2>
-          <strong>
-            {{user_detail.name}}
-          </strong>
-        </h2>
-      </div>
-    </div>
+    <div *ngIf="!edit" class="row">
 
-    <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+      <div class="col-lg-4 col-md-4 col-sm-12 mt-5 text-center">
 
-      <div>
-        <div class="text-center">
+        <img *ngIf="user_detail.avatar_url != ''" [src]="user_detail.avatar_url" class="w-75 img-responsive rounded" />
+        <img *ngIf="user_detail.avatar_url == ''" src="assets/images/default-img.png"
+          class="w-75 img-responsive rounded" />
+
+        <div class="username mt-2 text-dark shadow-lg p-1 mb-4 bg-white mr-5 ml-5">
           <h2>
-            {{'user_detail.information.trans' | translate }}
+            <strong>
+              {{user_detail.name}}
+            </strong>
           </h2>
         </div>
+      </div>
 
-        <div class="p-2 info-block"> {{'user_detail.member_since.trans' | translate }}:
-          {{user_detail.created_at | date: "MMM d, y"}}</div>
-        <div class="p-2 info-block">{{'user_detail.location.trans' | translate }}: {{user_detail.location}}</div>
-        <div class="p-2 info-block">{{'user_detail.company.trans' | translate }}: {{user_detail.company}}</div>
+      <div class="col-lg-3 col-md-4 col-sm-12 mt-5">
 
-        <div class="p-2 info-block">{{'user_detail.repositories.trans' | translate }}: {{user_detail.public_repos}}
+        <div>
+          <div class="text-center">
+            <h2>
+              {{'user_detail_comp.information.trans' | translate }}
+            </h2>
+          </div>
+
+          <div class="p-2 info-block"> {{'user_detail_comp.member_since.trans' | translate }}:
+            {{user_detail.created_at | date: "MMM d, y"}}</div>
+          <div class="p-2 info-block">{{'user_detail_comp.location.trans' | translate }}: {{user_detail.location}}</div>
+          <div class="p-2 info-block">{{'user_detail_comp.company.trans' | translate }}: {{user_detail.company}}</div>
+
+          <div class="p-2 info-block">{{'user_detail_comp.repositories.trans' | translate }}:
+            {{user_detail.public_repos}}
+          </div>
+          <div class="p-2 info-block">{{'user_detail_comp.gists.trans' | translate }}: {{user_detail.public_gists}}
+          </div>
+          <div class="p-2 info-block">{{'user_detail_comp.followers.trans' | translate }}: {{user_detail.followers}}
+          </div>
+          <div class="p-2 info-block">{{'user_detail_comp.following.trans' | translate }}: {{user_detail.following}}
+          </div>
         </div>
-        <div class="p-2 info-block">{{'user_detail.gists.trans' | translate }}: {{user_detail.public_gists}}
+
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-12 mt-5">
+        <div>
+
+          <div class="text-center">
+            <h2>
+              {{'user_detail_comp.links.trans' | translate }}
+            </h2>
+          </div>
+
+          <div class="p-2 info-block">
+            <a target="_blank" [href]="user_detail.html_url">
+              <i class="fa fa-link" aria-hidden="true"></i> {{'user_detail_comp.github.trans' | translate }}
+            </a>
+          </div>
+          <div class="p-2 info-block">
+            <a target="_blank" [href]="user_detail.blog">
+              <i class="fa fa-link" aria-hidden="true"></i> {{'user_detail_comp.blog.trans' | translate }}
+            </a>
+          </div>
+
+          <!-- <div class="p-2 info-block">
+                <a target="_blank" [href]="user_detail.followers_url">
+                  <i class="fa fa-link" aria-hidden="true"></i> Followers
+                </a>
+              </div>
+              <div class="p-2 info-block">
+                <a target="_blank" [href]="user_detail.following_url">
+                  <i class="fa fa-link" aria-hidden="true"></i> Following
+                </a>
+              </div> -->
+
         </div>
-        <div class="p-2 info-block">{{'user_detail.followers.trans' | translate }}: {{user_detail.followers}}</div>
-        <div class="p-2 info-block">{{'user_detail.following.trans' | translate }}: {{user_detail.following}}</div>
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-sm-12 mt-5">
+        <button (click)="edit=true" type="button" mdbBtn color="primary" mdbWavesEffect>
+          {{'user_detail_comp.edit_save_btn.edit.trans' | translate }}
+        </button>
       </div>
 
     </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
-      <div>
+    <div *ngIf="edit" class="row">
 
-        <div class="text-center">
-          <h2>
-            {{'user_detail.links.trans' | translate }}
-          </h2>
+      <div class="col-lg-4 col-md-4 col-sm-12 mt-5 text-center">
+
+        <div class="md-form md-form-img-btn" *ngIf="user_detail.avatar_url != ''">
+          <button (click)="user_detail.avatar_url=''" class="img-btn-ctm w-75" mdbBtn type="button" color="secondary"
+            outline="true" mdbWavesEffect>
+            {{'user_detail_comp.profile_picture_btn.remove_profile_picture.trans' | translate }}
+          </button>
         </div>
 
-        <div class="p-2 info-block">
-          <a target="_blank" [href]="user_detail.html_url">
-            <i class="fa fa-link" aria-hidden="true"></i> {{'user_detail.github.trans' | translate }}
-          </a>
-        </div>
-        <div class="p-2 info-block">
-          <a target="_blank" [href]="user_detail.blog">
-            <i class="fa fa-link" aria-hidden="true"></i> {{'user_detail.blog.trans' | translate }}
-          </a>
+        <div class="md-form md-form-img-btn" *ngIf="user_detail.avatar_url == ''">
+          <button (click)="user_detail.avatar_url=''" class="img-btn-ctm w-75" mdbBtn type="button" color="secondary"
+            outline="true" mdbWavesEffect>
+            {{'user_detail_comp.profile_picture_btn.add_profile_picture.trans' | translate }}
+          </button>
         </div>
 
-        <!-- <div class="p-2 info-block">
-              <a target="_blank" [href]="user_detail.followers_url">
-                <i class="fa fa-link" aria-hidden="true"></i> Followers
-              </a>
+        <img *ngIf="user_detail.avatar_url != ''" [src]="user_detail.avatar_url" class="w-75 img-responsive rounded" />
+        <img *ngIf="user_detail.avatar_url == ''" src="assets/images/default-img.png"
+          class="w-75 img-responsive rounded" />
+
+        <div class="username mt-2 text-dark shadow-lg p-1 mb-4 bg-white mr-5 ml-5">
+          <div class="md-form">
+            <input (keyup)='shouldSave()' [(ngModel)]="user_detail.name" name="user_name"
+              class="form-control form-control-sm mr-3 w-75" type="text" [placeholder]="'User Name'" aria-label="Search"
+              mdbInput>
+            <mdb-error *ngIf="user_detail.name == ''">* user name is required</mdb-error>
+          </div>
+          <!-- <h2>
+            <strong>
+              {{user_detail.name}}
+            </strong>
+          </h2> -->
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-12 mt-5">
+
+        <div>
+          <div class="text-center">
+            <h2>
+              {{'user_detail_comp.information.trans' | translate }}
+            </h2>
+          </div>
+
+          <div class="p-2 info-block"> {{'user_detail_comp.member_since.trans' | translate }}:
+            {{user_detail.created_at | date: "MMM d, y"}}</div>
+          <div class="p-2 info-block">
+            {{'user_detail_comp.location.trans' | translate }}:
+            <div class="md-form">
+              <input (keyup)='shouldSave()' [(ngModel)]="user_detail.location" name="location"
+                class="form-control form-control-sm mr-3 w-75" type="text"
+                [placeholder]="'user_detail.location.trans' | translate" aria-label="Search" mdbInput>
             </div>
-            <div class="p-2 info-block">
-              <a target="_blank" [href]="user_detail.following_url">
-                <i class="fa fa-link" aria-hidden="true"></i> Following
-              </a>
-            </div> -->
+          </div>
+          <div class="p-2 info-block">
+            {{'user_detail_comp.company.trans' | translate }}:
+            <!-- {{user_detail.company}} -->
+
+            <div class="md-form">
+              <input (keyup)='shouldSave()' [(ngModel)]="user_detail.company" name="location"
+                class="form-control form-control-sm mr-3 w-75" type="text"
+                [placeholder]="'user_detail.company.trans' | translate" aria-label="Search" mdbInput>
+
+            </div>
+          </div>
+
+          <div class="p-2 info-block">
+            {{'user_detail_comp.repositories.trans' | translate }}:
+            <!-- {{user_detail.public_repos}} -->
+
+            <div class="md-form">
+              <input (keyup)='shouldSave()' [(ngModel)]="user_detail.public_repos" name="location"
+                class="form-control form-control-sm mr-3 w-75" type="text"
+                [placeholder]="'user_detail.repositories.trans' | translate" aria-label="Search" mdbInput>
+
+            </div>
+          </div>
+          <div class="p-2 info-block">
+            {{'user_detail_comp.gists.trans' | translate }}:
+            <!-- {{user_detail.public_gists}} -->
+            <div class="md-form">
+              <input (keyup)='shouldSave()' [(ngModel)]="user_detail.public_gists" name="location"
+                class="form-control form-control-sm mr-3 w-75" type="text"
+                [placeholder]="'user_detail.gists.trans' | translate" aria-label="Search" mdbInput>
+            </div>
+          </div>
+          <div class="p-2 info-block">
+            {{'user_detail_comp.followers.trans' | translate }}:
+            <!-- {{user_detail.followers}} -->
+            <div class="md-form">
+              <input (keyup)='shouldSave()' [(ngModel)]="user_detail.followers" name="location"
+                class="form-control form-control-sm mr-3 w-75" type="text"
+                [placeholder]="'user_detail.followers.trans' | translate" aria-label="Search" mdbInput>
+            </div>
+          </div>
+          <div class="p-2 info-block">
+            {{'user_detail_comp.following.trans' | translate }}:
+            <!-- {{user_detail.following}} -->
+
+            <div class="md-form">
+              <input (keyup)='shouldSave()' [(ngModel)]="user_detail.following" name="location"
+                class="form-control form-control-sm mr-3 w-75" type="text"
+                [placeholder]="'user_detail.following.trans' | translate" aria-label="Search" mdbInput>
+            </div>
+
+          </div>
+        </div>
 
       </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-12 mt-5">
+        <div>
+
+          <div class="text-center">
+            <h2>
+              {{'user_detail_comp.links.trans' | translate }}
+            </h2>
+          </div>
+
+          <div class="p-2 info-block">
+            <a target="_blank" [href]="user_detail.html_url">
+              <i class="fa fa-link" aria-hidden="true"></i> {{'user_detail_comp.github.trans' | translate }}
+            </a>
+            <div class="md-form">
+              <input (keyup)='shouldSave()' [(ngModel)]="user_detail.html_url" name="location"
+                class="form-control form-control-sm mr-3 w-75" type="text"
+                [placeholder]="'user_detail.github.trans' | translate" aria-label="Search" mdbInput>
+
+            </div>
+          </div>
+          <div class="p-2 info-block">
+            <a target="_blank" [href]="user_detail.blog">
+              <i class="fa fa-link" aria-hidden="true"></i> {{'user_detail_comp.blog.trans' | translate }}
+            </a>
+            <div class="md-form">
+              <input (keyup)='shouldSave()' [(ngModel)]="user_detail.blog" name="location"
+                class="form-control form-control-sm mr-3 w-75" type="text"
+                [placeholder]="'user_detail.blog.trans' | translate" aria-label="Search" mdbInput>
+            </div>
+          </div>
+
+          <!-- <div class="p-2 info-block">
+                <a target="_blank" [href]="user_detail.followers_url">
+                  <i class="fa fa-link" aria-hidden="true"></i> Followers
+                </a>
+              </div>
+              <div class="p-2 info-block">
+                <a target="_blank" [href]="user_detail.following_url">
+                  <i class="fa fa-link" aria-hidden="true"></i> Following
+                </a>
+              </div> -->
+
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-sm-12 mt-5">
+        <button (click)="saveDetails()" type="button" mdbBtn color="primary" [disabled]="!should_save" mdbWavesEffect>
+          {{'user_detail_comp.edit_save_btn.save.trans' | translate }}
+        </button>
+      </div>
+
     </div>
+
   </div>
 
   <div class="text-center mt-5" *ngIf="!user_detail">

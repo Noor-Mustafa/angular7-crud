@@ -16,6 +16,9 @@
         "add_user_btn": {
             "trans": "إضافة مستخدم"
         },
+        "total_users": {
+            "trans": "مجموع المستخدمين"
+        },
         "order_by": {
             "trans": "ترتيب حسب",
             "tooltip_info": {
@@ -35,9 +38,17 @@
         },
         "search": {
             "trans": "بحث"
+        },
+        "add_user_modal": {
+            "add": {
+                "trans": "إضافة"
+            },
+            "close": {
+                "trans": "أغلق"
+            }
         }
     },
-    "user_detail": {
+    "user_detail_comp": {
         "information": {
             "trans": "المعلومات"
         },
@@ -70,6 +81,22 @@
         },
         "blog": {
             "trans": "Blog"
+        },
+        "edit_save_btn": {
+            "edit": {
+                "trans": "تصحيح"
+            },
+            "save": {
+                "trans": "حفظ"
+            }
+        },
+        "profile_picture_btn": {
+            "remove_profile_picture": {
+                "trans": "إزالة صورة الملف الشخصي"
+            },
+            "add_profile_picture": {
+                "trans": "إضافة صورة الملف الشخصي"
+            }
         }
     }
 }
