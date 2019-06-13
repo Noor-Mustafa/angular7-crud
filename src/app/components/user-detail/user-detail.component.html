@@ -65,18 +65,6 @@
               <i class="fa fa-link" aria-hidden="true"></i> {{'user_detail_comp.blog.trans' | translate }}
             </a>
           </div>
-
-          <!-- <div class="p-2 info-block">
-                <a target="_blank" [href]="user_detail.followers_url">
-                  <i class="fa fa-link" aria-hidden="true"></i> Followers
-                </a>
-              </div>
-              <div class="p-2 info-block">
-                <a target="_blank" [href]="user_detail.following_url">
-                  <i class="fa fa-link" aria-hidden="true"></i> Following
-                </a>
-              </div> -->
-
         </div>
       </div>
 
@@ -118,11 +106,6 @@
               mdbInput>
             <mdb-error *ngIf="!should_save">* user name is required</mdb-error>
           </div>
-          <!-- <h2>
-            <strong>
-              {{user_detail.name}}
-            </strong>
-          </h2> -->
         </div>
       </div>
 
@@ -147,8 +130,6 @@
           </div>
           <div class="p-2 info-block">
             {{'user_detail_comp.company.trans' | translate }}:
-            <!-- {{user_detail.company}} -->
-
             <div class="md-form">
               <input (keyup)='shouldSave()' [(ngModel)]="user_detail.company" name="location"
                 class="form-control form-control-sm mr-3 w-75" type="text"
@@ -159,8 +140,6 @@
 
           <div class="p-2 info-block">
             {{'user_detail_comp.repositories.trans' | translate }}:
-            <!-- {{user_detail.public_repos}} -->
-
             <div class="md-form">
               <input (keyup)='shouldSave()' [(ngModel)]="user_detail.public_repos" name="location"
                 class="form-control form-control-sm mr-3 w-75" type="text"
@@ -170,7 +149,6 @@
           </div>
           <div class="p-2 info-block">
             {{'user_detail_comp.gists.trans' | translate }}:
-            <!-- {{user_detail.public_gists}} -->
             <div class="md-form">
               <input (keyup)='shouldSave()' [(ngModel)]="user_detail.public_gists" name="location"
                 class="form-control form-control-sm mr-3 w-75" type="text"
@@ -179,7 +157,6 @@
           </div>
           <div class="p-2 info-block">
             {{'user_detail_comp.followers.trans' | translate }}:
-            <!-- {{user_detail.followers}} -->
             <div class="md-form">
               <input (keyup)='shouldSave()' [(ngModel)]="user_detail.followers" name="location"
                 class="form-control form-control-sm mr-3 w-75" type="text"
@@ -188,8 +165,6 @@
           </div>
           <div class="p-2 info-block">
             {{'user_detail_comp.following.trans' | translate }}:
-            <!-- {{user_detail.following}} -->
-
             <div class="md-form">
               <input (keyup)='shouldSave()' [(ngModel)]="user_detail.following" name="location"
                 class="form-control form-control-sm mr-3 w-75" type="text"
@@ -231,18 +206,6 @@
                 [placeholder]="'user_detail.blog.trans' | translate" aria-label="Search" mdbInput>
             </div>
           </div>
-
-          <!-- <div class="p-2 info-block">
-                <a target="_blank" [href]="user_detail.followers_url">
-                  <i class="fa fa-link" aria-hidden="true"></i> Followers
-                </a>
-              </div>
-              <div class="p-2 info-block">
-                <a target="_blank" [href]="user_detail.following_url">
-                  <i class="fa fa-link" aria-hidden="true"></i> Following
-                </a>
-              </div> -->
-
         </div>
       </div>
 

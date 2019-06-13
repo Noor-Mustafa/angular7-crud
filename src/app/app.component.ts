@@ -32,7 +32,6 @@ export class AppComponent {
     const browserLang = translate.getBrowserLang();
 
     this.internationalization_service_instance.setLanguage(browserLang);
-
   }
 
   ngOnInit() {
@@ -44,7 +43,6 @@ export class AppComponent {
     this.internationalization_service_instance.getLanguage().subscribe((selected_language: string) => {
       this.translate.use(selected_language);
     });
-
   }
 
 }

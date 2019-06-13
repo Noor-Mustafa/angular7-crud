@@ -35,7 +35,6 @@ export class UserDetailComponent implements OnInit {
     });
 
     this.user_service_instance.getUserDetail(this.user).subscribe((data) => {
-      // this.users = data;
       this.user_detail = data;
     });
   }
@@ -54,10 +53,8 @@ export class UserDetailComponent implements OnInit {
   }
 
   userProfilePic(files): void {
-    // var mimeType = files[0].type;
     files = files.target.files;
     var reader = new FileReader();
-    // this.new_user_profile_pic = files;
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       this.user_detail.avatar_url = reader.result;

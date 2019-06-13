@@ -26,8 +26,6 @@
     <ul class="navbar-nav float-right">
       <li class="nav-item">
         <select class="browser-default custom-select" (change)="changeLanguage($event)">
-          <!-- <mdb-select [options]="languages" formControlName="lang_select" placeholder="Choose your option">
-          </mdb-select> -->
           <option *ngFor="let lang of languages" selected [value]="lang.value">{{lang.label}}</option>
         </select>
       </li>
