@@ -12,19 +12,17 @@ import { UserService } from '../../services/user-service/user.service';
 })
 export class UsersListWithFiltrationComponent implements OnInit {
 
+  public users;
+  public ordered_users;
 
-  private users;
-  private ordered_users;
+  public search_key: string;
+  public user_order: string;
+  public loader: boolean;
 
-  private search_key: string;
-  private user_order: string;
-  private loader: boolean;
+  public new_user_name: string;
+  public new_user_name_status: boolean;
 
-  private new_user_name: string;
-  private new_user_name_status: boolean;
-
-  private new_user_profile_pic;
-
+  public new_user_profile_pic;
 
   constructor(
     private user_service_instance: UserService
@@ -53,7 +51,7 @@ export class UsersListWithFiltrationComponent implements OnInit {
     });
   }
 
-  private onChangeSearch(): void {
+  public onChangeSearch(): void {
     this.ordered_users.length = 0;
     if (this.search_key == "") {
       return;
@@ -67,7 +65,7 @@ export class UsersListWithFiltrationComponent implements OnInit {
     }
   }
 
-  private userOrderChange(order: string): void {
+  public userOrderChange(order: string): void {
     this.user_order = order;
 
     this.ordered_users = [...this.users];
@@ -107,7 +105,7 @@ export class UsersListWithFiltrationComponent implements OnInit {
     return;
   }
 
-  private addUser(): void {
+  public addUser(): void {
     this.users.splice(0, 0, {
       "login": this.new_user_name,
       "avatar_url": <File>this.new_user_profile_pic
@@ -135,11 +133,6 @@ export class UsersListWithFiltrationComponent implements OnInit {
     reader.onload = (_event) => {
       this.new_user_profile_pic = reader.result;
     }
-  }
-
-  preview(files) {
-
-
   }
 
 }

@@ -14,11 +14,11 @@ import { UserService } from '../../services/user-service/user.service';
 })
 export class UserDetailComponent implements OnInit {
 
-  private user_detail;
-  private user: string;
+  public user_detail;
+  public user: string;
 
-  private edit: boolean;
-  private should_save: boolean;
+  public edit: boolean;
+  public should_save: boolean;
 
   constructor(
     private user_service_instance: UserService,

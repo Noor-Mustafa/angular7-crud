@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   /*
    * Supported Language
    */
-  private languages = [
+  public languages = [
     { label: 'عَرَبِيّ', value: 'ar' },
     { label: 'English', value: 'en' }
   ];
