@@ -66,7 +66,8 @@
         <mdb-card>
           <div class="view rgba-white-slight waves-light" mdbWavesEffect>
             <!-- Card img -->
-            <mdb-card-img [src]="user.avatar_url" alt="Card image cap">
+            <mdb-card-img [src]="(user.avatar_url=='')?'assets/images/default-img.png':user.avatar_url"
+              alt="Card image cap">
             </mdb-card-img>
             <a>
               <div class="mask"></div>
@@ -156,17 +157,26 @@
           </h4>
         </div>
         <div class="modal-body">
-          <div>Upload File</div>
-          <div>
+
+          <div class="md-form">
             <input [(ngModel)]="new_user_name" name="search_key" class="form-control form-control-sm mr-3 w-75"
-              type="text" [placeholder]="'User Name'" aria-label="Search" mdbInput>
+              type="file" [placeholder]="'User Name'" aria-label="Search" mdbInput>
           </div>
+
+          <div class="md-form">
+            <input (change)="checkUserName()" [(ngModel)]="new_user_name" name="search_key"
+              class="form-control form-control-sm mr-3 w-75" type="text" [placeholder]="'User Name'" aria-label="Search"
+              mdbInput>
+            <mdb-error *ngIf="!new_user_name_status">* user name is required</mdb-error>
+          </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
             (click)="basicModal.hide()"
             mdbWavesEffect>{{'users_list_with_filtration_comp.add_user_modal.close.trans' | translate }}</button>
-          <button (click)="addUser()" type="button" mdbBtn color="primary" class="relative waves-light"
+          <button (click)="addUser()" type="button" mdbBtn color="primary" [disabled]="!new_user_name_status"
+            class="relative waves-light"
             mdbWavesEffect>{{'users_list_with_filtration_comp.add_user_modal.add.trans' | translate }}</button>
         </div>
       </div>

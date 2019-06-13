@@ -115,7 +115,7 @@
             <input (keyup)='shouldSave()' [(ngModel)]="user_detail.name" name="user_name"
               class="form-control form-control-sm mr-3 w-75" type="text" [placeholder]="'User Name'" aria-label="Search"
               mdbInput>
-            <mdb-error *ngIf="user_detail.name == ''">* user name is required</mdb-error>
+            <mdb-error *ngIf="!should_save">* user name is required</mdb-error>
           </div>
           <!-- <h2>
             <strong>

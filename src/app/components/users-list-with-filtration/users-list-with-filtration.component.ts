@@ -21,6 +21,7 @@ export class UsersListWithFiltrationComponent implements OnInit {
   private loader: boolean;
 
   private new_user_name: string;
+  private new_user_name_status: boolean;
 
   constructor(
     private user_service_instance: UserService
@@ -31,6 +32,7 @@ export class UsersListWithFiltrationComponent implements OnInit {
 
     this.loader = false;
     this.new_user_name = "";
+    this.new_user_name_status = false;
   }
 
   ngOnInit() {
@@ -118,13 +120,24 @@ export class UsersListWithFiltrationComponent implements OnInit {
         "login": this.new_user_name,
         "avatar_url": ""
       });
+      this.new_user_name = "";
+      this.new_user_name_status = false;
     }
     else {
-      // error
+      ;
     }
 
     console.log("addUser");
     // window.basicModal.hide();
+  }
+
+  checkUserName(): void {
+    if (this.new_user_name.replace(/\s/g, "") == "") {
+      this.new_user_name_status = false;
+    }
+    else {
+      this.new_user_name_status = true;
+    }
   }
 
 }

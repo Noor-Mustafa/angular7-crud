@@ -41,7 +41,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   shouldSave(): void {
-    if (this.user_detail.name.replace(/''/g, "") == "") {
+    if (this.user_detail.name.replace(/\s/g, "") == "") {
       this.should_save = false;
     }
     else {
